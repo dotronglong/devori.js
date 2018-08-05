@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+## Devori.JS
 
-You can use the [editor on GitHub](https://github.com/dotronglong/devori.js/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Devori.js is a small and lightweight javascript file to handle device and its orientation.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Idea
 
-### Markdown
+App tends to change to mobile first whereas we could easily adapt responsiveness for any devices using `@media` query. I am a developer, and I am so lazy to find out which exactly is demension of each device. As it turns out, I want to work with class's name instead of `@media` queries.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+For an example, with `@media` you can control styles for `iphone` as below
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```css
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { /* STYLES GO HERE */}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Nonetheless, I want to have something similar to ...
 
-### Jekyll Themes
+```css
+.tablet.tablet-8.portrait { /* STYLES GO HERE */ }
+.iphone.iphone-5.landscape { /* STYLES GO HERE */ }
+.iphone.iphone-6.portrait { /* STYLES GO HERE */ }
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dotronglong/devori.js/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Why?
 
-### Support or Contact
+Some poeple might ask for the reason why I need to make things more complicated, just use the `@media` queries.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+OK! Let's take a look over advantages and disadvantages of both solution
+
+`@media`:
+ - Advantages:
+  + Easy to control any devices if you know exactly its dimension
+  + ... and more, you name it
+ - Disadvantages:
+  + Need to maintain devices' dimensions
+  + Hard to read without comments
+ 
+ `devori.js`
+ - Advantages:
+  + Easy to read and understand
+  + No need to maintain devices' dimensions
+ - Disadvantages:
+  + Lacking abilities to fully control devices
+
+### Conclusion
+
+Discussing topic "What is better?" is likely same as "Which to use? IP Address or Domain name" :)
